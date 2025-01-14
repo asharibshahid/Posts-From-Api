@@ -23,8 +23,8 @@ export default function Home() {
         } else {
           setError(result.message || "Failed to fetch posts.");
         }
-      } catch (err) {
-        setError("An error occurred while fetching data.");
+      } catch (err:any) {
+        setError(err);
       } finally {
         setLoading(false);
       }
