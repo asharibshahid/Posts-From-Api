@@ -23,9 +23,12 @@ export default function Data() {
         } else {
           setError(result.message || "Failed to fetch posts.");
         }
-      } catch (err:any) {
-        setError( err);
-      } finally {
+      } catch (err: unknown) {
+        if (err instanceof Error) {
+          setError(err.message);
+        }
+      }
+      finally {
         setLoading(false);
       }
     }
