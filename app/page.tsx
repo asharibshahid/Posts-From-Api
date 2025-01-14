@@ -1,5 +1,4 @@
-
-import Data from ".";
+import Data from "./post";
 
 export default function Home() {
   return (
